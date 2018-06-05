@@ -143,19 +143,19 @@ namespace Estagio.Nucleo
         {
             if (EhDoTamanhoCorretoDeCNPJ())
             {
-                
+                var cnpjFormatado = Convert.ToUInt64(_numero).ToString(@"00\.000\.000\/0000\-00");
+                return cnpjFormatado;
             }
             else
             {
                 var cpfFormatado = Convert.ToUInt64(_numero).ToString(@"000\.000\.000\-00"); 
                 return cpfFormatado;
             }
-            return string.Empty;
         }
 
         public override string ToString()
         {
-            return _numero;
+            return ObtenhaCPFCNPJFormatado();
         }
 
         public override bool Equals(object obj)
