@@ -14,26 +14,28 @@ namespace Estagio.Nucleo
 
         }
 
-        public static RepositorioDeFornecedor Instancia { get; set; }
+        public static readonly RepositorioDeFornecedor Instancia = new RepositorioDeFornecedor();
+
+        private List<Fornecedor> _fornecedores = new List<Fornecedor>();
 
         public void Add(Fornecedor item)
         {
-            throw new NotImplementedException();
+            _fornecedores.Add(item);
         }
 
         public void Delete(Fornecedor item)
         {
-            throw new NotImplementedException();
+            _fornecedores.Remove(item);
         }
 
         public IEnumerable<Fornecedor> GetAll()
         {
-            throw new NotImplementedException();
+            return _fornecedores;
         }
 
         public Fornecedor GetById(int id)
         {
-            throw new NotImplementedException();
+            return _fornecedores.Find(x => x.Id == id);
         }
 
         public void Update(Fornecedor item)

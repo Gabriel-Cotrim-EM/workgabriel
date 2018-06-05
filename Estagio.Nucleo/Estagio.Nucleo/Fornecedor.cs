@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estagio.Nucleo
 {
-    class Fornecedor : MovimentacaoDeEntrada
+    class Fornecedor
     {
         public int Id { get; set; }
         public string Nome { get; set; }

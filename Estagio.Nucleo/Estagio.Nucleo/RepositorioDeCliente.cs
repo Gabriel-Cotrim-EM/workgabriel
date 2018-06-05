@@ -14,26 +14,28 @@ namespace Estagio.Nucleo
 
         }
 
-        public static RepositorioDeCliente Instancia { get; set; }
+        public static readonly RepositorioDeCliente Instancia = new RepositorioDeCliente();
+
+        private List<Cliente> _clientes = new List<Cliente>();
 
         public void Add(Cliente item)
         {
-            throw new NotImplementedException();
+            _clientes.Add(item);
         }
 
         public void Delete(Cliente item)
         {
-            throw new NotImplementedException();
+            _clientes.Remove(item);
         }
 
         public IEnumerable<Cliente> GetAll()
         {
-            throw new NotImplementedException();
+            return _clientes;
         }
 
         public Cliente GetById(int id)
         {
-            throw new NotImplementedException();
+            return _clientes.Find(x => x.Id == id);
         }
 
         public void Update(Cliente item)

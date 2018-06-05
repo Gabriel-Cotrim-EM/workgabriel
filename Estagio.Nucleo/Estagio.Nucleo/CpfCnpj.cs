@@ -12,13 +12,43 @@ namespace Estagio.Nucleo
 
         public CpfCnpj(string numero)
         {
-            this.Numero = numero;
+            if(numero.Length == 14 || numero.Length == 11)
+            {
+                if(numero.Length == 14 && validaCnpj(numero))
+                {
+                    validaCnpj(numero);
+                }
+                else
+                {
+                    throw new ApplicationException($"Cnpj invalido {numero}");
+                }
+                if(numero.Length == 11 && ValidaCpf(numero))
+                {
+                    ValidaCpf(numero);
+                }
+                else
+                {
+                    throw new ApplicationException($"Cpf invalido {numero}");
+                }
+            }
+            else
+            {
+                throw new ApplicationException($"Cpf ou cnpj invalido {numero}");
+            }
         }
 
         public bool ValidaCpf(string cpf)
         {
+            var numero =
+                from n in cpf
+                where char.IsNumber(n)
+                select n;
+
+            cpf = new string(numero.ToArray());
+
             int tamanho = cpf.Length;
-            if(tamanho == 11)
+            const int CpfTamanho = 11;
+            if(tamanho == CpfTamanho)
             {
                 var digitosQuery =
                         from numeros in cpf
@@ -28,7 +58,7 @@ namespace Estagio.Nucleo
                 int[] digitosVetor = digitosQuery.ToArray();
                 var tamanhoVetor = digitosVetor.Length;
 
-                int[] vetorExemplo = new int[11];
+                int[] vetorExemplo = new int[CpfTamanho];
 
                 for (int i = 0; i < tamanho; i++)
                 {
@@ -100,7 +130,7 @@ namespace Estagio.Nucleo
 
                 if (vetorExemplo[9] == digitosVetor[9] && vetorExemplo[10] == digitosVetor[10])
                 {
-                    char[] cpfChar = new char[11];
+                    char[] cpfChar = new char[CpfTamanho];
                     for (int i = 0; i < tamanhoExemplo; i++)
                     {
                         cpfChar[i] = Convert.ToChar(vetorExemplo[i].ToString());
@@ -138,10 +168,109 @@ namespace Estagio.Nucleo
 
         public bool validaCnpj(string cnpj)
         {
+
+            var numeros =
+                from n in cnpj
+                where char.IsNumber(n)
+                select n;
+
+            cnpj = new string(numeros.ToArray());
+
             int tamanho = cnpj.Length;
-            if(tamanho == 14)
+            const int CnpjTamanho = 14;
+            if(tamanho == CnpjTamanho)
             {
-                return true;
+
+                var cnpjInt =
+                    from digitos in cnpj
+                    select Convert.ToInt32(digitos);
+
+                int[] cnpjIntArray = cnpjInt.ToArray();
+
+                int[] cnpjTeste = new int[12];
+
+                for(int i = 0; i < cnpjTeste.Length; i++)
+                {
+                    cnpjTeste[i] = cnpjIntArray[i];
+                }
+
+                int[] multiplicadoresUm = new int[] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+                int[] resultados = new int[12];
+                var soma = 0;
+
+                for(int i = 0; i < cnpjTeste.Length; i++)
+                {
+                    resultados[i] = cnpjTeste[i] * multiplicadoresUm[i];
+                    soma += resultados[i];
+                }
+
+                cnpjTeste = new int[13];
+
+                int resto = (soma % 11);
+
+                if(resto < 2)
+                {
+                    cnpjTeste[12] = 0;
+                }
+                else
+                {
+                    cnpjTeste[12] = (11 - resto);
+                }
+
+                int[] multiplicadoresDois = new int[] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+                resultados = new int[13];
+
+                soma = 0;
+
+                for (int i = 0; i < cnpjTeste.Length; i++)
+                {
+                    resultados[i] = cnpjTeste[i] * multiplicadoresDois[i];
+                    soma += resultados[i];
+                }
+
+                cnpjTeste = new int[CnpjTamanho];
+                resto = (soma % 11);
+
+                if (resto < 2)
+                {
+                    cnpjTeste[13] = 0;
+                }
+                else
+                {
+                    cnpjTeste[13] = (11 - resto);
+                }
+                if (cnpjIntArray[12] == cnpjTeste[12] && cnpjIntArray[13] == cnpjTeste[13])
+                {
+                    char[] cnpjChar = new char[CnpjTamanho];
+                    for(int i = 0; i < CnpjTamanho; i++)
+                    {
+                        cnpjChar[i] = Convert.ToChar(cnpjIntArray[i].ToString());
+                    }
+
+                    Numero = new string(cnpjChar);
+
+                    string posicaoDois = "." + cnpjChar[2];
+                    string posicaoCinco = "." + cnpjChar[5];
+                    string posicaoOito = "/" + cnpjChar[8];
+                    string posicaoDoze = "-" + cnpjChar[12];
+
+                    Numero = Numero.Remove(2, 1);
+                    Numero = Numero.Remove(4, 1);
+                    Numero = Numero.Remove(6, 1);
+                    Numero = Numero.Remove(9, 1);
+
+                    Numero = Numero.Insert(2, posicaoDois);
+                    Numero = Numero.Insert(6, posicaoCinco);
+                    Numero = Numero.Insert(10, posicaoOito);
+                    Numero = Numero.Insert(15, posicaoDoze);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             else
             {

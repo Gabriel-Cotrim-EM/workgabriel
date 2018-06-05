@@ -14,26 +14,28 @@ namespace Estagio.Nucleo
 
         }
 
-        public static RepositorioDeProduto Instancia { get; set; }
+        public static readonly RepositorioDeProduto Instancia = new RepositorioDeProduto();
+
+        private List<Produto> _produtos = new List<Produto>();
 
         public void Add(Produto item)
         {
-            throw new NotImplementedException();
+            _produtos.Add(item);
         }
 
         public void Delete(Produto item)
         {
-            throw new NotImplementedException();
+            _produtos.Remove(item);
         }
 
         public IEnumerable<Produto> GetAll()
         {
-            throw new NotImplementedException();
+            return _produtos;
         }
 
         public Produto GetById(int id)
         {
-            throw new NotImplementedException();
+            return _produtos.Find(x => x.Id == id);
         }
 
         public void Update(Produto item)

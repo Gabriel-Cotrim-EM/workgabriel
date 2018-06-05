@@ -14,26 +14,28 @@ namespace Estagio.Nucleo
 
         }
 
-        public static RepositorioDeMovimentacao Instancia { get; set; }
+        public static readonly RepositorioDeMovimentacao Instancia = new RepositorioDeMovimentacao();
+
+        private List<MovimentacaoDeEstoqueAbstrato> _movimentacoes = new List<MovimentacaoDeEstoqueAbstrato>();
 
         public void Add(MovimentacaoDeEstoqueAbstrato item)
         {
-            throw new NotImplementedException();
+            _movimentacoes.Add(item);
         }
 
         public void Delete(MovimentacaoDeEstoqueAbstrato item)
         {
-            throw new NotImplementedException();
+            _movimentacoes.Remove(item);
         }
 
         public IEnumerable<MovimentacaoDeEstoqueAbstrato> GetAll()
         {
-            throw new NotImplementedException();
+            return _movimentacoes;
         }
 
         public MovimentacaoDeEstoqueAbstrato GetById(int id)
         {
-            throw new NotImplementedException();
+            return _movimentacoes.Find(x => x.Id == id);
         }
 
         public void Update(MovimentacaoDeEstoqueAbstrato item)
