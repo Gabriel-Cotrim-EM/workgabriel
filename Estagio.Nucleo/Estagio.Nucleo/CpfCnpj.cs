@@ -27,14 +27,14 @@ namespace Estagio.Nucleo
 
         public string Numero { get => _numero; }
 
-        private bool EhDoTamanhoCorretoDeCNPJ(string numero)
+        private bool EhDoTamanhoCorretoDeCNPJ()
         {
-            return numero.Length == TamanhoDoCNPJ;
+            return _numero.Length == TamanhoDoCNPJ;
         }
 
-        private bool EhDoTamanhoCorretoDoCPF(string numero)
+        private bool EhDoTamanhoCorretoDoCPF()
         {
-            return numero.Length == TamanhoDoCPF;
+            return _numero.Length == TamanhoDoCPF;
         }
 
         private void RemovaCarecteresNaoNumericos()
@@ -44,7 +44,7 @@ namespace Estagio.Nucleo
 
         private bool EhCPFValido()
         {
-            if (!EhDoTamanhoCorretoDoCPF(_numero))
+            if (!EhDoTamanhoCorretoDoCPF())
             {
                 return false;
             }
@@ -91,54 +91,49 @@ namespace Estagio.Nucleo
 
         private bool EhCPNJValido()
         {
-            if (!EhDoTamanhoCorretoDeCNPJ(_numero))
+            if (!EhDoTamanhoCorretoDeCNPJ())
             {
                 return false;
             }
 
+            var numeros = _numero.Select(c => int.Parse(c.ToString())).ToArray();
+
             var multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             var multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
 
-            int[] numeros = new int[14];
+            var soma = 0;
 
             for (var i = 0; i < 12; i++)
             {
-                numeros[i] = int.Parse(_numero[i].ToString());
-            }
-
-            var soma = 0;
-
-            for (var i = 0; i < 9; i++)
-            {
-                soma += (10 - i) * multiplicador1[i];
+                soma += numeros[i] * multiplicador1[i];
             }
 
             var resto = soma % 11;
 
             if (resto < 2)
             {
-                if (numeros[9] != 0) return false;
+                if (numeros[12] != 0) return false;
             }
             else
             {
-                if (numeros[9] != 11 - resto) return false;
+                if (numeros[12] != 11 - resto) return false;
             }
 
             soma = 0;
-            for (var i = 0; i < 11; i++)
+            for (var i = 0; i < 13; i++)
             {
-                soma += (11 - i) * multiplicador2[i];
+                soma += numeros[i] * multiplicador2[i];
             }
 
             resto = soma % 11;
 
             if (resto < 2)
             {
-                if (numeros[10] != 0) return false;
+                if (numeros[13] != 0) return false;
             }
             else
             {
-                if (numeros[10] != 11 - resto) return false;
+                if (numeros[13] != 11 - resto) return false;
             }
 
             return true;
@@ -146,7 +141,15 @@ namespace Estagio.Nucleo
 
         public string ObtenhaCPFCNPJFormatado()
         {
-            //TODO:
+            if (EhDoTamanhoCorretoDeCNPJ())
+            {
+                
+            }
+            else
+            {
+                var cpfFormatado = Convert.ToUInt64(_numero).ToString(@"000\.000\.000\-00"); 
+                return cpfFormatado;
+            }
             return string.Empty;
         }
 
