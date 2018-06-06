@@ -1,0 +1,14 @@
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.Form1.resources
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.Properties.Resources.resources
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.csproj.GenerateResource.cache
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.csproj.CoreCompileInputs.cache
+D:\workgabriel\Estagio.Nucleo\Teste\bin\Debug\Teste.exe.config
+D:\workgabriel\Estagio.Nucleo\Teste\bin\Debug\Teste.exe
+D:\workgabriel\Estagio.Nucleo\Teste\bin\Debug\Teste.pdb
+D:\workgabriel\Estagio.Nucleo\Teste\bin\Debug\Estagio.Nucleo.dll
+D:\workgabriel\Estagio.Nucleo\Teste\bin\Debug\Estagio.Nucleo.pdb
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.csproj.CopyComplete
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.exe
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.pdb
+D:\workgabriel\Estagio.Nucleo\Teste\obj\Debug\Teste.FormCadastraProduto.resources

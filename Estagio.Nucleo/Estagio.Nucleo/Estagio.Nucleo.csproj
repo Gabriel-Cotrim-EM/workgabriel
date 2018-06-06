@@ -47,15 +47,16 @@
     <Compile Include="Fornecedor.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="ItemMovimentacao.cs" />
-    <Compile Include="MovimentacaoDeEntrada.cs" />
-    <Compile Include="MovimentacaoDeEstoqueAbstrato.cs" />
-    <Compile Include="MovimentacaoDeSaida.cs" />
+    <Compile Include="Movimentação\MovimentacaoDeEntrada.cs" />
+    <Compile Include="Movimentação\MovimentacaoDeEstoqueAbstrato.cs" />
+    <Compile Include="Movimentação\MovimentacaoDeSaida.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioDeCliente.cs" />
-    <Compile Include="RepositorioDeFornecedor.cs" />
-    <Compile Include="RepositorioDeMovimentacao.cs" />
-    <Compile Include="RepositorioDeProduto.cs" />
+    <Compile Include="Repositorio\RepositorioDeCliente.cs" />
+    <Compile Include="Repositorio\RepositorioDeFornecedor.cs" />
+    <Compile Include="Repositorio\RepositorioDeMovimentacao.cs" />
+    <Compile Include="Repositorio\RepositorioDeProduto.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

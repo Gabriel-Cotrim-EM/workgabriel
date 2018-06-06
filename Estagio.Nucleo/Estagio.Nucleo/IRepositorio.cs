@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estagio.Nucleo
 {
-    interface IRepositorio<T>
+    public interface IRepositorio<T>
     {
         void Add(T item);
         void Delete(T item);

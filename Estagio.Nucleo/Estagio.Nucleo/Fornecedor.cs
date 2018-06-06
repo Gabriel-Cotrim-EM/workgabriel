@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Estagio.Nucleo
 {
-    class Fornecedor
+    public class Fornecedor
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public CpfCnpj cpfCnpj;
+        public CPFCNPJ cpfCnpj;
     }
 }

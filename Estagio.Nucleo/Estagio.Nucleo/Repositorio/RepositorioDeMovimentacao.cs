@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Estagio.Nucleo
+namespace Estagio.Nucleo.Repositorio
 {
-    class RepositorioDeMovimentacao : IRepositorio<MovimentacaoDeEstoqueAbstrato>
+    public class RepositorioDeMovimentacao : IRepositorio<MovimentacaoDeEstoqueAbstrato>
     {
 
         private RepositorioDeMovimentacao()

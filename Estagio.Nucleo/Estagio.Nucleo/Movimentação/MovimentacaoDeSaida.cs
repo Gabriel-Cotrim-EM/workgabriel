@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Estagio.Nucleo
 {
-    class MovimentacaoDeEntrada : MovimentacaoDeEstoqueAbstrato
+    public class MovimentacaoDeSaida : MovimentacaoDeEstoqueAbstrato
     {
-        public Fornecedor Fornecedor { get; set; }
+        public Cliente Cliente { get; set; }
 
     }
 }

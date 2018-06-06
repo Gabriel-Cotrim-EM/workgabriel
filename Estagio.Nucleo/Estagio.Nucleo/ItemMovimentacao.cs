@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estagio.Nucleo
 {
-    class ItemMovimentacao
+    public class ItemMovimentacao
     {
         public decimal ValorUnitario { get; set; }
         public int Quantidade { get; set; }

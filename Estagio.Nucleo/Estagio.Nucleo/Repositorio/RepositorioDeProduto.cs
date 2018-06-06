@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Estagio.Nucleo
+namespace Estagio.Nucleo.Repositorio
 {
-    class RepositorioDeProduto : IRepositorio<Produto>
+    public class RepositorioDeProduto : IRepositorio<Produto>
     {
 
         private RepositorioDeProduto()
@@ -40,7 +40,8 @@ namespace Estagio.Nucleo
 
         public void Update(Produto item)
         {
-            throw new NotImplementedException();
+            _produtos.Remove(GetById(item.Id));
+            _produtos.Add(item);
         }
     }
 }

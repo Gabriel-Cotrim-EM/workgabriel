@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Estagio.Nucleo
+namespace Estagio.Nucleo.Repositorio
 {
-    class RepositorioDeCliente : IRepositorio<Cliente>
+    public class RepositorioDeCliente : IRepositorio<Cliente>
     {
 
         private RepositorioDeCliente()
