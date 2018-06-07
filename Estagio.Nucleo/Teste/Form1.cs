@@ -55,6 +55,15 @@ namespace Teste
 
         }
 
+        private void LimpaCampos()
+        {
+            cboProdutos.Text = string.Empty;
+            txtID.Text = string.Empty;
+            txtQuantidadeMinima.Text = string.Empty;
+            txtPrecoUnitario.Text = string.Empty;
+            cboProdutos.Items.Clear();
+        }
+
         private void btnFormAtualiza_Click(object sender, EventArgs e)
         {
             Produto produtoAtualizado = new Produto();
@@ -63,17 +72,18 @@ namespace Teste
             produtoAtualizado.PrecoUnitario = Convert.ToDecimal(txtPrecoUnitario.Text);
             produtoAtualizado.Descricao = cboProdutos.Text;
             RepositorioDeProduto.Instancia.Update(produtoAtualizado);
-            cboProdutos.Text = string.Empty;
-            txtID.Text = string.Empty;
-            txtQuantidadeMinima.Text = string.Empty;
-            txtPrecoUnitario.Text = string.Empty;
-            cboProdutos.Items.Clear();
+            LimpaCampos();
             AdicionaConta();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            txtID.ReadOnly = true;
         }
     }
 }

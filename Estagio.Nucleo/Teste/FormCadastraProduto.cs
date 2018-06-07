@@ -38,6 +38,14 @@ namespace Teste
 
         }
 
+        private void LimpaCampos()
+        {
+            txtDescricao.Text = string.Empty;
+            txtID.Text = string.Empty;
+            txtQuantidadeMinima.Text = string.Empty;
+            txtPrecoUnitario.Text = string.Empty;
+        }
+
         private void btnCadastra_Click(object sender, EventArgs e)
         {
 
@@ -48,10 +56,7 @@ namespace Teste
                 QuantidadeMinimaEstoque = Convert.ToInt32(txtQuantidadeMinima.Text),
                 PrecoUnitario = Convert.ToDecimal(txtPrecoUnitario.Text)
             });
-            txtDescricao.Text = string.Empty;
-            txtID.Text = string.Empty;
-            txtQuantidadeMinima.Text = string.Empty;
-            txtPrecoUnitario.Text = string.Empty;
+            LimpaCampos();
             txtID.Focus();
 
         }
