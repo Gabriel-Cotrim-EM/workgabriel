@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using Estagio.Nucleo;
 using Estagio.Nucleo.Repositorio;
 
-namespace Teste
+namespace Estagio.WinForms
 {
-    public partial class PrototipoCadastro : Form
+    public partial class frmCadastroDeProduto : Form
     {
-        public PrototipoCadastro()
+        public frmCadastroDeProduto()
         {
             InitializeComponent();
 
@@ -22,6 +22,7 @@ namespace Teste
             dgvProdutos.AllowUserToAddRows = false;
             dgvProdutos.AllowUserToDeleteRows = false;
             dgvProdutos.AllowUserToResizeColumns = false;
+
 
             var colunaID = new DataGridViewTextBoxColumn();
             colunaID.HeaderText = "ID";
@@ -35,42 +36,37 @@ namespace Teste
             colunaDescricao.DataPropertyName = "ColunaDescricao";
             colunaDescricao.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvProdutos.Columns.Add(colunaDescricao);
+
+
+
         }
 
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
 
-            Produto prodUm = new Produto();
-            prodUm.Descricao = "Maçã";
-            prodUm.Id = 1;
-            prodUm.PrecoUnitario = 2.0m;
-            prodUm.QuantidadeMinimaEstoque = 5;
-            RepositorioDeProduto.Instancia.Add(prodUm);
+            var produtoUm = new Produto();
+            produtoUm.Descricao = "banana";
+            produtoUm.Id = 1;
+            produtoUm.PrecoUnitario = 2.0m;
+            produtoUm.QuantidadeMinimaEstoque = 3;
+            RepositorioDeProduto.Instancia.Add(produtoUm);
 
-            Produto prodDois = new Produto();
-            prodDois.Descricao = "Pera";
-            prodDois.Id = 2;
-            prodDois.PrecoUnitario = 3.0m;
-            prodDois.QuantidadeMinimaEstoque = 3;
-            RepositorioDeProduto.Instancia.Add(prodDois);
 
             bsProdutos.DataSource = RepositorioDeProduto.Instancia.GetAll();
             bsProdutos.ResetBindings(false);
             dgvProdutos.DataSource = bsProdutos;
+
         }
 
-        private void PrototipoCadastro_Load(object sender, EventArgs e)
+        private void frmCadastroDeProduto_Load(object sender, EventArgs e)
         {
-
-
+         
         }
 
         private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
 
-        
+        }
     }
 }
