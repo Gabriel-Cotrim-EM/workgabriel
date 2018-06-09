@@ -19,20 +19,33 @@ namespace Teste
             InitializeComponent();
         }
 
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void PrototipoCadastro_Load(object sender, EventArgs e)
         {
+            Produto prodUm = new Produto();
+            prodUm.Id = 1;
+            prodUm.Descricao = "Maçã";
+            prodUm.QuantidadeMinimaEstoque = 5;
+            prodUm.PrecoUnitario = 5.0m;
+            RepositorioDeProduto.Instancia.Add(prodUm);
+
+            Produto prodDois = new Produto();
+            prodDois.Id = 1;
+            prodDois.Descricao = "Pera";
+            prodDois.QuantidadeMinimaEstoque = 5;
+            prodDois.PrecoUnitario = 5.0m;
+            RepositorioDeProduto.Instancia.Add(prodDois);
+
             var produtos = RepositorioDeProduto.Instancia.GetAll();
-            
+
             foreach(Produto produto in produtos)
             {
                 dgvProdutos.Rows.Add(produto.Id, produto.Descricao);
             }
-
-        }
-
-        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
     }
 }
