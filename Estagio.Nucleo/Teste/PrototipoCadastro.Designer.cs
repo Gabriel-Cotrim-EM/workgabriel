@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtProdutos = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,42 +66,6 @@
             this.panel2.Size = new System.Drawing.Size(180, 400);
             this.panel2.TabIndex = 1;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(25, 138);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Fechar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(25, 102);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(25, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Novo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.txtProdutos);
@@ -121,13 +85,50 @@
             this.txtProdutos.Size = new System.Drawing.Size(578, 30);
             this.txtProdutos.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(25, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Novo";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(25, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Editar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(25, 102);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(127, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Excluir";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(25, 138);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(127, 30);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Fechar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // dgvProdutos
             // 
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnDescricao});
-            this.dgvProdutos.Location = new System.Drawing.Point(0, 168);
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProdutos.Location = new System.Drawing.Point(0, 137);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(620, 313);
             this.dgvProdutos.TabIndex = 3;
@@ -156,10 +157,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PrototipoCadastro";
             this.Text = "PrototipoCadastro";
-            this.Load += new System.EventHandler(this.PrototipoCadastro_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

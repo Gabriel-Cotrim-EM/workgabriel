@@ -4,9 +4,3 @@ D:\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.csprojAsse
 D:\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.csproj.CoreCompileInputs.cache
 D:\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.dll
 D:\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.pdb
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\bin\Debug\Estagio.Nucleo.dll
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\bin\Debug\Estagio.Nucleo.pdb
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.csprojAssemblyReference.cache
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.csproj.CoreCompileInputs.cache
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.dll
-D:\Gabriel\workgabriel\Estagio.Nucleo\Estagio.Nucleo\obj\Debug\Estagio.Nucleo.pdb
