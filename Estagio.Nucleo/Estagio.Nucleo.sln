@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estagio.Nucleo", "Estagio.Nucleo\Estagio.Nucleo.csproj", "{3DAFB54B-CD83-4FA5-8040-2901E4FD5838}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{76C19D1A-67C7-4328-9E32-0252025D60BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estagio.WinForms", "Estagio.WinForms\Estagio.WinForms.csproj", "{1238F841-475A-45FB-BA13-0F1804A8E17F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3DAFB54B-CD83-4FA5-8040-2901E4FD5838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DAFB54B-CD83-4FA5-8040-2901E4FD5838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DAFB54B-CD83-4FA5-8040-2901E4FD5838}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76C19D1A-67C7-4328-9E32-0252025D60BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76C19D1A-67C7-4328-9E32-0252025D60BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76C19D1A-67C7-4328-9E32-0252025D60BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76C19D1A-67C7-4328-9E32-0252025D60BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1238F841-475A-45FB-BA13-0F1804A8E17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1238F841-475A-45FB-BA13-0F1804A8E17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1238F841-475A-45FB-BA13-0F1804A8E17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1238F841-475A-45FB-BA13-0F1804A8E17F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
