@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estagio.Nucleo", "Estagio.Nucleo\Estagio.Nucleo.csproj", "{3DAFB54B-CD83-4FA5-8040-2901E4FD5838}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estagio.WinForms", "C:\Users\Gabri\OneDrive\Área de Trabalho\projeto refeito do Edher\WindowsFormsApp1\WindowsFormsApp1\Estagio.WinForms.csproj", "{05553893-4C3A-4D43-8D78-356F00740AF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "C:\Users\EscolarManager\Desktop\biblioteca\projeto refeito do Edher\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1.csproj", "{05553893-4C3A-4D43-8D78-356F00740AF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
